@@ -4,7 +4,7 @@ import './head.css'
 function Head(){
     return(
         <header>
-            <h1>una gran tienda</h1>
+            <h1>ROPA GENERICA DE COLORES</h1>
         </header>
     )
 }

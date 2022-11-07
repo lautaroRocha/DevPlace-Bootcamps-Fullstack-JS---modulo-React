@@ -4,4 +4,10 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: sans-serif;
+    background-color: var(--verde-osc);
+}
+
+h1{
+    font-size: 2rem;
 }

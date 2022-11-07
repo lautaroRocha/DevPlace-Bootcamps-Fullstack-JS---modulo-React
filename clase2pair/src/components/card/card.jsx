@@ -1,5 +1,5 @@
 import React from "react";
-import './card'
+import './card.css'
 
 
 function Card(props){

@@ -4,32 +4,30 @@ import Card from "../card/card";
 
 function Productos(){
 
-    let productos = [];
-
-    async function leerProductos(){
-        let res = await fetch("productos.json");
-        if(res.ok){
-            let data = await res.json();
-            productos = data; 
-            console.log(productos);
-        }else{
-            console.log('intente de nuevo')
-        }
-    }
-    leerProductos()
+    let productos = [    { 
+        "title": "Remera Blanca",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_918985-MLA48853594981_012022-O.webp",
+        "price": "$6"
+    },{
+        "title": "Remera Verde",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_2X_941270-MLA45470696472_042021-F.webp",
+        "price": "$12312"
+    }, {
+        "title": "Verde fluo",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_2X_864450-MLA51243789815_082022-F.webp",
+        "price": "$123"
+    },{
+        "title": "Pack Color",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_2X_967346-MLA31645737307_072019-F.webp",
+        "price": "$76576"
+    }];
     
-    function mostrarCards(){
-        productos.map((obj, idx) =>{
-            return(
-                <Card key={idx} product={obj}/>
-                )
-        })
-    }
 
 
     return(
         <main>
-            <button onClick={mostrarCards}>mostrar productos</button>
+           {productos.map((obj, idx) =>{ return( <Card key={idx} product={obj}/>)})
+           }
         </main>
     )
 }
