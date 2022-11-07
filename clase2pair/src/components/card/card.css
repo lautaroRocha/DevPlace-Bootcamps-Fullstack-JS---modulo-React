@@ -1,0 +1,22 @@
+.card{
+    width: 150px;
+    height: 150px;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.card-title{
+    font-weight: bold;
+}
+
+.card-img{
+    width: 90%;
+    height: auto;
+}
+
+.card-price{
+
+}
