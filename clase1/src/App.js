@@ -28,7 +28,6 @@ function Sumar() {
   );
 }
 
-
 function App() {
 
   const arrayDeUsuarios=[{nombre: "María", userID:5}, 
