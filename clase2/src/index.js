@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { AutoClase, App } from './App';
+import App from './App';
+import AutoClase from './components/Auto-class';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AutoClase />
-    <App />
+    <App root={root}/>
   </React.StrictMode>
 );
 
