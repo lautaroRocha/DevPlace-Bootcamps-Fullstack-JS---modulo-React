@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --uno:#0f1114;
+  --dos: #202428;
+  --tres: #343f3f;
+  --cuatro: #4a5d5e;
+  --cinco: #677e81;
+
+  background-color: var(--tres);
+}

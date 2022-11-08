@@ -1,0 +1,30 @@
+
+header{
+    width: 100%;
+    background-color: var(--uno);
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+ header h1{
+    color:yellow;
+    font-size: clamp(2rem, 15vw, 4rem);
+    transform: skewX(5deg) skewY(-10deg);
+    margin-inline: auto;
+    background-color: var(--tres);
+ }
+
+ @media (min-width:750px){
+    header{
+        flex-direction: row;
+        height: 10rem;
+        justify-content: center;
+    }
+    header>h1{
+        margin-left: 15vw;
+    }
+ }
+
