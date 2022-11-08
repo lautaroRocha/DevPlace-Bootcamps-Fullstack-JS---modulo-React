@@ -1,13 +1,23 @@
 import React from "react";
 import './lista.css'
 
-function Lista(){
+function Lista(props){
+
+
+
+    function cambiarCategoria(e){
+        props.setCategoria(e.target.textContent)
+    }
+
+
+
+
     return(
         <h3>
             <ul>
-                <li data-name="Cascos">Cascos</li>
-                <li data-name="Bicicletas">Bicicletas</li>
-                <li data-name="Ropa">Ropa</li>
+                <li data-name="Cascos" onClick={cambiarCategoria}>Cascos</li>
+                <li data-name="Bicicletas" onClick={cambiarCategoria}>Bicicletas</li>
+                <li data-name="Ropa" onClick={cambiarCategoria}>Ropa</li>
             </ul>
         </h3>
     )

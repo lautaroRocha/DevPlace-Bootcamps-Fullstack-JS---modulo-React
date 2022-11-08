@@ -1,0 +1,25 @@
+main{
+    width: 100%;
+    height: auto;
+    min-height: calc(100vh - 10rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+main>h4{
+    font-size: 3rem;
+    color: var(--cinco);
+}
+main>div{
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+main>div>span{
+    font-size: 2rem;
+    max-width: 20ch;
+    text-align: center;
+    color: var(--cinco);
+}

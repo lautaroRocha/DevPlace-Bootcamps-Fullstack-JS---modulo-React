@@ -2,11 +2,11 @@ import React from "react";
 import Lista from "../Lista/Lista";
 import './navegacion.css'
 
-function Navegacion(){
+function Navegacion(props){
     return(
         <nav>
             <h2>Tu tienda de ciclismo</h2>
-            <Lista />
+            <Lista setCategoria={props.setCategoria}/>
         </nav>
     )
 }

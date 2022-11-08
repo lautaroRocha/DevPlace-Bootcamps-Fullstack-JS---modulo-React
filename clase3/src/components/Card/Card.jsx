@@ -1,12 +1,12 @@
 import React from "react";
 import './card.css'
 
-function Card(){
+function Card(props){
     return(
         <div className="card">
-            <span className="card-title"></span>
-            <img src="" alt="" className="card-img" />
-            <span className="card-price"></span>
+            <span className="card-title">{props.obj.title}</span>
+            <img src={props.obj.img} alt="" className="card-img" />
+            <span className="card-price">{props.obj.price}</span>
         </div>
     )
 }
