@@ -1,5 +1,6 @@
 import React, {useContext, useState} from "react";
 import Card from "./Card";
+import ProductsFilter from "./ProductsFilter";
 import '../styles/products.css'
 import { ProductsContext } from "../App";
 
@@ -17,24 +18,20 @@ function ProductsGrid(){
 
     }
 
-
     return(
         <>
-        <ul>
-            <li onClick={filterProducts}>Bicicletas</li>
-            <li onClick={filterProducts}>Cascos</li>
-            <li onClick={filterProducts}>Indumentaria</li>
-            <li onClick={() => {setSelectedProducts(products)}}>Todos</li>
-
-        </ul>
-
-        <div className="products-container">
-        {selectedProducts.map( (obj, idx) => {
-            return(
-                <Card obj={obj} key={idx} />
-            )} 
-        )}
-        </div>
+        
+        <ProductsFilter filterProducts={filterProducts} setSelectedProducts={setSelectedProducts} />
+        
+            <div className="products-container">
+            {selectedProducts.map( (obj, idx) => {
+                return(
+                    <Card obj={obj} key={idx} />
+                )} 
+            )}
+            </div>
+        
+        
         </>
         )
 }

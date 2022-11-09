@@ -1,0 +1,25 @@
+.filter{
+    display:flex; 
+    list-style: none;
+    gap: 1rem;
+}
+
+.filter>li 
+{
+    background-color: var(--terciario);
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 15%;
+    box-shadow: 3px 1px 1px black;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.filter>li:active{
+    box-shadow: none;
+    cursor: pointer;
+    background-color: hsl(60, 67%, 40%);
+    color: var(--dos);
+
+}
+

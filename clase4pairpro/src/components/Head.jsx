@@ -12,9 +12,9 @@ function Head(props){
             <h1>Cyclops</h1>
             <nav>
                 <ul>
-                    <li data-name="Productos" onClick={selectSection}>Productos</li>
-                    <li data-name="Marca" onClick={selectSection}>Marca</li>
-                    <li data-name="FAQ" onClick={selectSection}>FAQ</li>
+                    <li className="li-link" data-name="Productos" onClick={selectSection}>Productos</li>
+                    <li className="li-link" data-name="Marca" onClick={selectSection}>Marca</li>
+                    <li className="li-link" data-name="FAQ" onClick={selectSection}>FAQ</li>
                 </ul>
             </nav>
         </header>
