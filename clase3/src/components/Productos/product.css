@@ -15,11 +15,15 @@ main>div{
     margin: 1rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    
     gap: 1rem;
+    width: 80%;
 }
 main>div>span{
     font-size: 2rem;
     max-width: 20ch;
     text-align: center;
     color: var(--cinco);
+    margin-inline: auto;
 }

@@ -29,8 +29,6 @@ import Productos from './components/Productos/Productos';
 // hace click en el cambia el texto por la fecha actual con
 // día, hora, minutos y segundos.
 
-
-
 function App() {
 
   const [categoria, setCategoria] = useState();
@@ -41,17 +39,22 @@ function App() {
       fetch('bicicletas.json')
       .then(res => res.json())
       .then(data => setProductos(data))
-      break;
-      case "Cascos":
+    break;
+    case "Cascos":
       fetch('cascos.json')
       .then(res => res.json())
       .then(data => setProductos(data))
-      break;
-      case "Ropa":
+    break;
+    case "Ropa":
       fetch('ropa.json')
       .then(res => res.json())
       .then(data => setProductos(data))
-      break;
+    break;
+    case "Todos":
+      fetch('todos.json')
+      .then(res => res.json())
+      .then(data => setProductos(data))
+    break;
   }
 
   return (
