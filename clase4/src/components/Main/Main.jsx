@@ -1,9 +1,9 @@
 import React from "react";
-import ProductsGrid from "./ProductsGrid";
-import Brand from "./Brand";
-import Intro from "./Intro";
-import Faq from "./FAQ";
-import '../styles/main.css'
+import ProductsGrid from "../ProductsGrid/ProductsGrid";
+import Brand from "../Brand/Brand";
+import Intro from "../Intro/Intro";
+import Faq from "../FAQ/FAQ";
+import './main.css'
 
 function Main(props){
 

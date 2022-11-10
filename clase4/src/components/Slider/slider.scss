@@ -1,0 +1,33 @@
+.slider{
+    color: var(--clear);
+    width: 90%;
+    min-width: 50%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10000;
+    margin-right: 2rem;
+    img{
+        transform: scale(.8);
+        min-height: 100%;
+    }
+
+    .btn{
+        background-color: var(--terciario);
+        padding: .5rem;
+        display: grid;
+        place-items: center;
+    }
+    .back{
+        position: absolute;
+        top: 50%;
+        left: 0;
+    }
+    .nxt{
+        position: absolute;
+        top: 50%;
+        right: 0;
+    }
+}

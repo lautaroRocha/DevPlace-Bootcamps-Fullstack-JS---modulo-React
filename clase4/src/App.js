@@ -1,7 +1,7 @@
 import './styles/app.css';
-import Head from './components/Head';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import Head from './components/Head/Head';
+import Main from './components/Main/Main';
+import Footer from './components/Footer/Footer';
 import React, {useState, createContext} from 'react';
 
 
@@ -11,8 +11,12 @@ export const ProductsContext = createContext();
 export function App() {
   
   const [section, setSection] = useState('Intro');
-
+  const [theme, setTheme] = useState('dark');
   const [products, setProducts] = useState()
+
+  function switchTheme(){
+    theme === 'dark' ? setTheme('light') : setTheme('dark')
+  }
 
   function readProducts(){
     fetch('todos.json')
@@ -24,7 +28,7 @@ export function App() {
 
   return (
     <>
-    <Head setSection={setSection} />
+    <Head setSection={setSection} switchTheme={switchTheme}/>
     <ProductsContext.Provider value={products}>
       <Main section={section}/>
     </ProductsContext.Provider>
