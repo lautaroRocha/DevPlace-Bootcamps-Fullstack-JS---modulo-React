@@ -5,8 +5,9 @@
   flex-direction: column;
   justify-content: center;
   height: 10rem;
-  margin-top: 7rem;
-  margin-left: 1rem; }
+  margin-top: 5rem;
+  margin-left: 4rem;
+  position: fixed; }
   .filter ul {
     display: flex;
     flex-direction: column;
@@ -27,7 +28,3 @@
         cursor: pointer;
         background-color: #aaaa22;
         color: var(--dos); }
-  .filter input {
-    margin: auto;
-    grid-column: 4/12;
-    grid-row: 1; }

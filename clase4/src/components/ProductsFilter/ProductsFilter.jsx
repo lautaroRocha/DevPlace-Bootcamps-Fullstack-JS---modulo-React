@@ -15,7 +15,6 @@ const ProductsFilter = (props) => {
             <li onClick={props.filterProducts}>Indumentaria</li>
             <li onClick={() => {props.setSelectedProducts(products)}}>Todos</li>
         </ul>
-        <input type="text" onChange={props.filterProductsByText} placeholder="Buscá por nombre..."/>
         </div>
         </>
     );
