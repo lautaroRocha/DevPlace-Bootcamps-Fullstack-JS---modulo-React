@@ -6,8 +6,6 @@ const ProductsFilter = (props) => {
 
     let products = useContext(ProductsContext);
 
-
-
     return (
         <>
          <ul className="filter">

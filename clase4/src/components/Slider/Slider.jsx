@@ -3,7 +3,6 @@ import './slider.css'
 
 function Slider(props){
 
-
     const [display, setDisplay] = useState(0)
 
     function moveItem(e){
@@ -21,9 +20,6 @@ function Slider(props){
     }
 
     function loopImages(){
-
-        console.log(props.pics.length)
-        console.log(display)
         if(display === props.pics.length - 1){
             setDisplay(0)
         }else if((display === 0)){

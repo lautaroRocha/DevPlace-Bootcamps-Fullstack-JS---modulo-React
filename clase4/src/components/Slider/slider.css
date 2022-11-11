@@ -11,7 +11,8 @@
   margin-right: 2rem; }
   .slider img {
     transform: scale(0.8);
-    min-height: 100%; }
+    min-height: 100%;
+    max-height: 19rem; }
   .slider .btn {
     background-color: var(--terciario);
     padding: .5rem;
