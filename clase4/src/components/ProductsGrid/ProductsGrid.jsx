@@ -9,27 +9,25 @@ function ProductsGrid(){
 
     let products = useContext(ProductsContext);
 
-
     const [selectedProducts, setSelectedProducts] = useState(products);
 
     function filterProducts(e){
         let cat = e.target.textContent;
         let arrayFiltrado = products.filter( (obj) => {return(obj.type === cat)});
         setSelectedProducts(arrayFiltrado)
-
     }
 
     function filterProductsByText(e){
         let cat = e.target.value;
-        let arrayFiltrado = products.find( (obj) => {return( obj.name.includes(cat) )});
-        setSelectedProducts(arrayFiltrado)
+        let arrayFiltradoPorNombre = products.filter( (obj) => {return( obj.title.includes(cat.toLowerCase()))});
+        setSelectedProducts(arrayFiltradoPorNombre)
 
     }
 
     return(
         <>
-        
-        <ProductsFilter filterProducts={filterProducts} filterProductsByText={filterProductsByText} setSelectedProducts={setSelectedProducts} />
+        <div className="products">
+            <ProductsFilter filterProducts={filterProducts} filterProductsByText={filterProductsByText} setSelectedProducts={setSelectedProducts} className="products-filter"/>
     
             <div className="products-container">
             {selectedProducts.map( (obj, idx) => {
@@ -38,6 +36,7 @@ function ProductsGrid(){
                 )} 
             )}
             </div>
+        </div>
         
         
         </>

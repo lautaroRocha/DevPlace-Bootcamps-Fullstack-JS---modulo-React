@@ -9,7 +9,8 @@
   border-radius: 5px;
   background-color: var(--terciario); }
   .card .card-title {
-    font-weight: bolder; }
+    font-weight: bolder;
+    text-transform: capitalize; }
   .card .card-img {
     width: 80%;
     height: 100%;

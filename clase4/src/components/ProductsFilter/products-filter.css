@@ -1,19 +1,33 @@
 .filter {
-  display: flex;
   list-style: none;
-  gap: 1rem; }
-
-.filter > li {
-  background-color: var(--terciario);
-  padding: 1rem;
-  margin-top: 2rem;
-  border-radius: 15%;
-  box-shadow: 3px 1px 1px black;
-  font-weight: bolder;
-  cursor: pointer; }
-
-.filter > li:active {
-  box-shadow: none;
-  cursor: pointer;
-  background-color: #aaaa22;
-  color: var(--dos); }
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 10rem;
+  margin-top: 7rem;
+  margin-left: 1rem; }
+  .filter ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; }
+    .filter ul li {
+      background-color: var(--terciario);
+      padding: .5rem;
+      margin-top: 2rem;
+      border-radius: 15px;
+      box-shadow: 3px 1px 1px black;
+      font-weight: bolder;
+      cursor: pointer;
+      height: fit-content;
+      width: 15ch;
+      text-align: center; }
+      .filter ul li:active {
+        box-shadow: none;
+        cursor: pointer;
+        background-color: #aaaa22;
+        color: var(--dos); }
+  .filter input {
+    margin: auto;
+    grid-column: 4/12;
+    grid-row: 1; }

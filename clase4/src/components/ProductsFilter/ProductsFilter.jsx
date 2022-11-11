@@ -8,13 +8,15 @@ const ProductsFilter = (props) => {
 
     return (
         <>
-         <ul className="filter">
+        <div className="filter">
+         <ul >
             <li onClick={props.filterProducts}>Bicicletas</li>
             <li onClick={props.filterProducts}>Cascos</li>
             <li onClick={props.filterProducts}>Indumentaria</li>
             <li onClick={() => {props.setSelectedProducts(products)}}>Todos</li>
         </ul>
-        <input type="text" onChange={props.filterProductsByText} />
+        <input type="text" onChange={props.filterProductsByText} placeholder="Buscá por nombre..."/>
+        </div>
         </>
     );
 }

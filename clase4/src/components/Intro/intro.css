@@ -1,6 +1,7 @@
 .intro {
   padding: 2rem 0 10rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
@@ -30,3 +31,7 @@
   .intro .intro-img {
     height: 50%;
     width: 90%; }
+
+@media (min-width: 700px) {
+  .intro {
+    flex-direction: row; } }
