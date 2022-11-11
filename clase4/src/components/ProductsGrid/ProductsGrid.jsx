@@ -26,18 +26,19 @@ function ProductsGrid(){
 
     return(
         <>
-        <div className="products">
-            <ProductsFilter filterProducts={filterProducts} filterProductsByText={filterProductsByText} setSelectedProducts={setSelectedProducts} className="products-filter"/>
-            <input type="text" onChange={filterProductsByText} placeholder="🔎 Buscá por nombre..."/>
-            <div className="products-container">
-            {selectedProducts.map( (obj, idx) => {
-                return(
-                    <Card obj={obj} key={idx} />
-                )} 
-            )}
+        <div className="wrapper">
+            <div className="products">
+                <ProductsFilter filterProducts={filterProducts} filterProductsByText={filterProductsByText} setSelectedProducts={setSelectedProducts} className="products-filter"/>
+                <input type="text" onChange={filterProductsByText} placeholder="🔎 Buscá por nombre..."/>
+                <div className="products-container">
+                {selectedProducts.map( (obj, idx) => {
+                    return(
+                        <Card obj={obj} key={idx} />
+                    )} 
+                )}
+                </div>
             </div>
         </div>
-        
         
         </>
         )

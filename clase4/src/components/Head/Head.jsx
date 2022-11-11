@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './head.css'
 
 function Head(props){
@@ -16,9 +17,6 @@ function Head(props){
         }
     }
     
-    function selectSection(e){
-        props.setSection(e.target.textContent)
-    }
 
     window.onscroll = () =>{
         scrollFunction()
@@ -28,15 +26,17 @@ function Head(props){
     return(
         <header>
             <div className="logo">
-                <h1 onClick={()=>{props.setSection('Intro')}}>Cyclops</h1>
+                <Link to="/">
+                    <h1>Cyclops</h1>
+                </Link>
             </div>
             <nav>
                 <ul>
-                    <li data-name="Productos" onClick={selectSection}>Productos</li>
-                    <li data-name="Marca" onClick={selectSection}>Marca</li>
-                    <li data-name="FAQ" onClick={selectSection}>FAQ</li>
-                    <li data-name="">carrito</li>
-                    <li onClick={props.switchTheme}> {sunIcon}</li>
+                    <Link to="/productos" >Productos</Link>
+                    <Link to="/marca" >Marca</Link>
+                    <Link to="/faq">FAQ</Link>
+                    <Link to="/carrito">carrito</Link>
+                    <Link onClick={props.switchTheme}> {sunIcon}</Link>
 
                 </ul>
             </nav>

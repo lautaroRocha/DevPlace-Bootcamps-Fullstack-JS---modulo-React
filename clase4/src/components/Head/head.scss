@@ -19,6 +19,9 @@ header{
         display:flex;
         justify-content: center;
         align-items: center;
+        a{
+            text-decoration: none;
+        }
         h1{
             color: var(--terciario);
             transform: skewY(-10deg);
@@ -53,12 +56,13 @@ header{
         justify-content: center;
         list-style: none;
         gap: 5vw;
-        li{
+        a{
             font-size: clamp(.2rem, 3vw, 1.3rem);
             font-weight: bolder;
             color: var(--terciario);
             text-transform: uppercase;
             letter-spacing: .5ch;
+            text-decoration: none;
             &:hover{
                 cursor: pointer;
                 filter: drop-shadow(0px 0px 5px var(--terciario));                    
