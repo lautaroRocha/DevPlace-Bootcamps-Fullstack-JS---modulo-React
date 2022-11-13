@@ -47,7 +47,7 @@ function Head(props){
     };
 
     window.onresize = () => {
-        if(window.innerWidth >= 850){
+        if(window.innerWidth >= 900){
             showNav('1')
         }else{
             showNav('0')

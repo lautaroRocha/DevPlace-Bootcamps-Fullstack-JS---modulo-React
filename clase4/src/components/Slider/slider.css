@@ -25,3 +25,8 @@
     position: absolute;
     top: 50%;
     right: 15%; }
+  .slider span {
+    text-transform: uppercase;
+    font-weight: bolder;
+    transform: skewX(-15deg);
+    letter-spacing: .5ch; }

@@ -70,7 +70,7 @@ header {
       gap: 5vw;
       margin-top: 2rem; }
       header nav ul a {
-        font-size: clamp(0.5rem, 3vw, 1.3rem);
+        font-size: clamp(0.5rem, 2vw, 1.3rem);
         font-weight: bolder;
         color: var(--terciario);
         text-transform: uppercase;
@@ -89,6 +89,7 @@ header {
       display: none; }
     header nav {
       opacity: 1;
-      position: static; }
+      position: static;
+      width: 100%; }
       header nav ul {
         flex-direction: row; } }

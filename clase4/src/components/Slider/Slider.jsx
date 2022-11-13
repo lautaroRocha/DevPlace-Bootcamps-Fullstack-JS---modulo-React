@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import FadeIn from "../FadeIn/FadeIn";
 import './slider.css'
 
 function Slider(props){
@@ -28,12 +29,12 @@ function Slider(props){
     }
 
     return(
-        <div className="slider">
+            <div className="slider">
                     <img src={props.pics[display].link} />
                     <span>{props.pics[display].des}</span> 
                     <div className="btn back" onClick={moveItem}> 🡸 </div>
                     <div className="btn nxt" onClick={moveItem}> 🡺 </div>
-        </div>
+            </div>
     )
 }
 
