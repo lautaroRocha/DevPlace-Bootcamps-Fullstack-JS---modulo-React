@@ -1,5 +1,5 @@
 .intro {
-  padding: 2rem 0 10rem;
+  margin-top: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,17 +15,20 @@
     height: 50%; }
     .intro .intro-txt h1 {
       font-size: 2.5rem;
-      position: relative;
       z-index: 1; }
-      .intro .intro-txt h1 span:before {
-        content: "cycl";
-        color: var(--terciario);
-        background-color: var(--terciario);
-        width: 30%;
-        transform: skewY(-10deg);
-        position: absolute;
-        z-index: -3;
-        margin-left: 1rem; }
+      .intro .intro-txt h1 span {
+        position: relative;
+        display: inline-block; }
+        .intro .intro-txt h1 span:before {
+          content: "cycl";
+          color: var(--terciario);
+          background-color: var(--terciario);
+          width: 100%;
+          transform: skewY(-10deg);
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: -3; }
     .intro .intro-txt p {
       font-size: 2rem; }
   .intro .intro-img {

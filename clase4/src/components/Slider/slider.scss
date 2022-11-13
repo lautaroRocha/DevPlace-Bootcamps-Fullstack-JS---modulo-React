@@ -1,14 +1,13 @@
 .slider{
     color: var(--clear);
     width: 90%;
-    min-width: 50%;
     min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    z-index: 10000;
-    margin-right: 2rem;
+    z-index: 9;
+    margin: auto;
     img{
         transform: scale(.8);
         min-height: 100%;

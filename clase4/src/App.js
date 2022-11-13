@@ -6,7 +6,7 @@ import ProductsGrid from './components/ProductsGrid/ProductsGrid';
 import Brand from './components/Brand/Brand';
 import Faq from './components/FAQ/FAQ';
 import Footer from './components/Footer/Footer';
-import React, {useState, createContext} from 'react';
+import React, {useState, createContext, useEffect} from 'react';
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -24,12 +24,14 @@ export function App() {
     theme === 'dark' ? setTheme('light') : setTheme('dark')
   }
 
-  function readProducts(){
+
+  useEffect(() => {
     fetch('todos.json')
     .then(res => res.json())
     .then(data => setProducts(data));
-  }
-  readProducts()
+  }, []);
+    
+ 
 
 
   return (

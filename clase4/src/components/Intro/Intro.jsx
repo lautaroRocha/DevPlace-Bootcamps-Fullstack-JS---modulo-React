@@ -8,7 +8,6 @@ function Intro(){
     {link:'https://cdn.shopify.com/s/files/1/0027/9379/9739/products/Macon-2.0-MIPS-Matte-Black-1_75f6f0ab-d69d-4eb3-962c-305253768e7f_300x300.png?v=1664512772', des: 'un casco para la ciudad'} ]
 
     return(
-        <div className="wrapper">
             <div className="intro">
                 <div className="intro-txt">
                     <h1>¡Bienvenidos a <span>Cyclops!</span></h1>
@@ -16,7 +15,6 @@ function Intro(){
                 </div>
                     <Slider pics={imgForCarru}/>
             </div>
-        </div>
     )
 }
 

@@ -1,4 +1,5 @@
 .products{
+  margin-top: 20vh;
   display: grid;
   width: 100%;
   grid-template-columns: repeat(12, 1fr);
@@ -19,12 +20,23 @@
     grid-row: 3/12;
     grid-column: 4/12;
     width: 95%;
-    height: 100%;
+    height: 80vh;
+    overflow: scroll;
     display: flex;
     flex-wrap: wrap; 
     justify-content: center;
     gap: 1rem;
     padding: 2rem 0;
     margin-inline:auto;
+    &::-webkit-scrollbar{
+      background-color: var(--back);
+    }
+    &::-webkit-scrollbar-thumb{
+      background-color: var(--terciario);
+      border-radius: 15px;
+    }
+    &::-webkit-scrollbar-corner{
+      background-color: var(--back);
+    }
   }
 }
