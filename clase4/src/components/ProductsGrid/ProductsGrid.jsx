@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react";
-import Card from "../Card/Card";
+import Card from "../../utilities/Card/Card";
 import ProductsFilter from "../ProductsFilter/ProductsFilter";
 import './products.css'
 import { ProductsContext } from "../../App";
