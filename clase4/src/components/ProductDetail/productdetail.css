@@ -20,3 +20,10 @@
       height: auto; }
     .detail .detail-col span {
       color: var(--clear); }
+
+@media (min-width: 900px) {
+  .detail {
+    flex-direction: row;
+    margin-top: 12rem; }
+    .detail .detail-col img {
+      width: 60%; } }

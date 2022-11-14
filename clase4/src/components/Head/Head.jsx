@@ -12,10 +12,12 @@ function Head(props){
     let nav = useRef();
 
     useEffect(() => {
-        header.current.style.height = '20vh'
-        header.current.style.backgroundColor = 'rgba(111, 111, 111, 0.3)'
-        setNavState("closed");
-        showNav("0")
+        if(window.innerWidth <= 900){
+            header.current.style.height = '20vh'
+            header.current.style.backgroundColor = 'rgba(111, 111, 111, 0.3)'
+            setNavState("closed");
+            showNav("0")
+        }
      }, [location]);
 
 
@@ -47,6 +49,11 @@ function Head(props){
     }
     function showNav(p){
         nav.current.style.opacity = p; 
+        if(p === "0"){
+            nav.current.style.display = "none"
+        }else{
+            nav.current.style.display = "block"
+        }
     }
 
 
@@ -80,8 +87,7 @@ function Head(props){
                     <Link to="/marca" >Marca</Link>
                     <Link to="/faq">FAQ</Link>
                     <Link to="/carrito">carrito</Link>
-                    <Link onClick={props.switchTheme}> {sunIcon}</Link>
-
+                    <Link onClick={props.switchTheme}>{sunIcon}</Link>
                 </ul>
             </nav>
         </header>

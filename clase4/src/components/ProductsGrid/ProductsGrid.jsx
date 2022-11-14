@@ -14,6 +14,7 @@ function ProductsGrid(){
     function filterProducts(e){
         let cat = e.target.textContent;
         let arrayFiltrado = products.filter( (obj) => {return(obj.type === cat)});
+        console.log(arrayFiltrado)
         setSelectedProducts(arrayFiltrado)
     }
 
@@ -28,7 +29,7 @@ function ProductsGrid(){
         <>
         <div className="wrapper">
             <div className="products">
-                <ProductsFilter filterProducts={filterProducts} filterProductsByText={filterProductsByText} setSelectedProducts={setSelectedProducts} className="products-filter"/>
+                <ProductsFilter className="products-filter" filterProducts={filterProducts} filterProductsByText={filterProductsByText} setSelectedProducts={setSelectedProducts} className="products-filter"/>
                 <input type="text" onChange={filterProductsByText} placeholder="🔎 Buscá por nombre..."/>
                 <div className="products-container">
                 {selectedProducts.map( (obj, idx) => {

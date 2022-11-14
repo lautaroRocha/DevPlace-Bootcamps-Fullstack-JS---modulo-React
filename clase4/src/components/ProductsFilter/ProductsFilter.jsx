@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import { ProductsContext } from '../../App';
 import './products-filter.css'
+import * as icons from '../../utilities/varIconsFilter'
 
 const ProductsFilter = (props) => {
 
@@ -10,10 +11,10 @@ const ProductsFilter = (props) => {
         <>
         <div className="filter">
          <ul >
-            <li onClick={props.filterProducts}>Bicicletas</li>
-            <li onClick={props.filterProducts}>Cascos</li>
-            <li onClick={props.filterProducts}>Indumentaria</li>
-            <li onClick={() => {props.setSelectedProducts(products)}}>Todos</li>
+            <li onClick={props.filterProducts} cat="Bicicletas">Bicicletas{icons.bikes}</li>
+            <li onClick={props.filterProducts}>{icons.helmets}Cascos</li>
+            <li onClick={props.filterProducts}>{icons.clothing}Indumentaria</li>
+            <li onClick={() => {props.setSelectedProducts(products)}}>{icons.all}</li>
         </ul>
         </div>
         </>

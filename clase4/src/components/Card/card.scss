@@ -23,5 +23,12 @@
         font-weight: bold;
     }
 }
+@media(min-width:900px){
+    .card{
+        width: 20%;
+        max-width: 200px;
+        max-height: 230px;
+    }
+}
 
       
