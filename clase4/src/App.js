@@ -50,11 +50,11 @@ export function App() {
         <Route path="/carrito" element={<Cart cart={cart} />}/>
         <Route path="/marca" element={<Brand />}/>
         <Route path="/faq" element={<Faq />}/>
-        <Route path="/productos/producto" element={<ProductDetail addToCart={addToCart}/>}/>
+        <Route path="/productos/producto/:id" element={<ProductDetail addToCart={addToCart}/>}/>
       </Routes>
     </ProductsContext.Provider>
-    </BrowserRouter>
     <Footer />
+    </BrowserRouter>
     </>
   );
 }

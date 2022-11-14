@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import './card.css'
 
@@ -8,7 +8,7 @@ function Card(props){
             <span className="card-title">{props.obj.title}</span>
             <img src={props.obj.img} alt="" className="card-img" />
             <span className="card-price">{props.obj.price}</span>
-            <Link to={`/productos/producto?ID=${props.obj.id}`}>
+            <Link to={`/productos/producto/${props.obj.id}`}>
                 <button>ver detalle</button>
             </Link>
         </div>

@@ -1,17 +1,15 @@
 import React, {useContext, useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ProductsContext } from "../../App";
 import './productdetail.css'
 
 function ProductDetail(props){
 
     let products = useContext(ProductsContext);
-
-    let params = new URLSearchParams(document.location.search);
-    let desiredID = params.get('ID');
+   
+    let params = useParams();
     
-    let obj = products.find( ele => ele.id == desiredID )
-
+    let obj = products.find( ele => ele.id == params.id )
 
     return(
         <div className="detail">
