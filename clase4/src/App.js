@@ -1,6 +1,6 @@
 import './styles/app.css';
 import Head from './components/Head/Head';
-import Main from './components/Main/Main';
+import ProductDetail from './components/ProductDetail/ProductDetails';
 import Intro from './components/Intro/Intro';
 import ProductsGrid from './components/ProductsGrid/ProductsGrid';
 import Brand from './components/Brand/Brand';
@@ -44,6 +44,7 @@ export function App() {
         <Route path="/productos" element={<ProductsGrid/>}/>
         <Route path="/marca" element={<Brand />}/>
         <Route path="/faq" element={<Faq />}/>
+        <Route path="/productos/producto" element={<ProductDetail />}/>
       </Routes>
     </ProductsContext.Provider>
     </BrowserRouter>
