@@ -3,16 +3,14 @@ import { Link } from "react-router-dom";
 import { ProductsContext } from "../../App";
 import './productdetail.css'
 
-function ProductDetail(){
+function ProductDetail(props){
 
     let products = useContext(ProductsContext);
-    const [avalaibleProducts, setAvalaibleProducts] = useState(products);
 
     let params = new URLSearchParams(document.location.search);
     let desiredID = params.get('ID');
     
-    let obj = avalaibleProducts.find( ele => ele.id == desiredID )
-
+    let obj = products.find( ele => ele.id == desiredID )
 
 
     return(
@@ -23,7 +21,7 @@ function ProductDetail(){
             </div>
             <div className="detail-col">
                 <span>{obj.price}</span>
-                <button>AÑADIR A COMPRA</button>
+                <button onClick={() => {props.addToCart(obj)}}>AÑADIR A COMPRA</button>
                 <Link to="/productos">
                 <button>VOLVER</button>
                 </Link>

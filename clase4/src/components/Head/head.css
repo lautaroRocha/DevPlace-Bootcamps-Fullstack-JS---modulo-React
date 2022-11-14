@@ -62,10 +62,10 @@ header {
       flex-direction: column;
       justify-content: center;
       list-style: none;
-      gap: 5vw;
+      gap: 1rem;
       margin-top: 2rem; }
       header nav ul a {
-        font-size: clamp(0.5rem, 2vw, 1.3rem);
+        font-size: clamp(0.5rem, 5vw, 1.3rem);
         font-weight: bolder;
         color: var(--terciario);
         text-transform: uppercase;

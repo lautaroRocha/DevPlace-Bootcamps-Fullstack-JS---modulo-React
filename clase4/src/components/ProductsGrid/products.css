@@ -20,6 +20,8 @@
     .products .products-container::-webkit-scrollbar {
       background-color: var(--back);
       width: 10px; }
+    .products .products-container::-webkit-scrollbar-track {
+      background-color: var(--back); }
     .products .products-container::-webkit-scrollbar-thumb {
       background-color: var(--terciario);
       border-radius: 15px; }
