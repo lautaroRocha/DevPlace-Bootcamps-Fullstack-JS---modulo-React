@@ -4,6 +4,7 @@ import './cart.css'
 
 function Cart(props){
 
+
     const [currentOrder, setCurrentOrder] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0)
 
@@ -11,14 +12,14 @@ function Cart(props){
         let order = createOrder();
         let settedOrder = new Set([...order].map(x => JSON.stringify(x)));
         let cleanOrder = Array.from(settedOrder)
-        setCurrentOrder(cleanOrder)
-    }, [props.favs]);
+        let arr = [];
+        cleanOrder.forEach((ele) => arr.push(JSON.parse(ele)))
+        setCurrentOrder(arr)
+    }, [currentOrder]);
 
     useEffect(() =>{
-        let arr = [];
-        currentOrder.forEach((ele) => arr.push(JSON.parse(ele)))
         let total = 0
-        arr.forEach( (ele) => total = total + (parseInt(ele.price) * parseInt(ele.quantity)) );
+        currentOrder.forEach( (ele) => total = total + (parseInt(ele.price) * parseInt(ele.quantity)) );
         setTotalPrice(total)
     }, [currentOrder])
 
@@ -44,7 +45,7 @@ function Cart(props){
             </div>
             <div className="cart-body">
             {currentOrder.map((obj, idx)=>{
-                return(<CartItem obj={obj} key={idx}/>)
+                return(<CartItem obj={obj} key={idx} removeFromCart={props.removeFromCart}/>)
             })}
             </div>
             <div className="cart-foot">

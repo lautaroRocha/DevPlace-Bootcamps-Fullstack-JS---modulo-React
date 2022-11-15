@@ -28,6 +28,15 @@ export function App() {
     setCart(currentOrder)
   }
 
+  function removeFromCart(e){
+    let arr = cart;
+    let productName = e.target.parentElement.parentElement.firstChild.textContent;
+    let selectedObject = arr.find( (ele) => ele.title === productName);
+    let selectedIndex = arr.indexOf(selectedObject)
+    arr.splice(selectedIndex, 1)
+    setCart(arr)
+}
+
   function switchTheme(){
     theme === 'dark' ? setTheme('light') : setTheme('dark')
   }
@@ -47,7 +56,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Intro />}/>
         <Route path="/productos" element={<ProductsGrid />}/>
-        <Route path="/carrito" element={<Cart cart={cart} />}/>
+        <Route path="/carrito" element={<Cart cart={cart} setCart={setCart} removeFromCart={removeFromCart}/>}/>
         <Route path="/marca" element={<Brand />}/>
         <Route path="/faq" element={<Faq />}/>
         <Route path="/productos/producto/:id" element={<ProductDetail addToCart={addToCart}/>}/>

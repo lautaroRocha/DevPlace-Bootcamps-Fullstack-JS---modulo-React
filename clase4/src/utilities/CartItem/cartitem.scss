@@ -24,6 +24,16 @@
         line-height: 1.8ch;
         filter: drop-shadow(-3px 3px 1px var(--dos));
     }
+    div{
+        flex:1;
+        display: flex;
+        position: relative;
+    }
+    div:hover{
+        .cart-btn{
+            display: block;
+        }
+    }
     span{
         margin: 0 auto;
         font-size: 1.5rem;
@@ -36,10 +46,21 @@
         text-align: center;
         margin-left: auto;
         filter: drop-shadow(-3px 3px 1px var(--dos));
-
     }
-    span:last-of-type{
-        left: -15px;
+    .cart-btn{
+        position: absolute;
+        display: none;
+        cursor: pointer;
+    }
+    .add{
+        left: 8vw;
+    }
+    .take{
+        right: -13vw;
+    }
+
+    .price-tag{
+        left: -5px;
         &::before{
         content: '$';
     }
@@ -50,6 +71,12 @@
         width: 80%;
         h4{
             left: 3vw;
+        }
+        .add{
+            left: 15vw;
+        }
+        .take{
+            right: -20vw;
         }
         span{
             left: 10vw;
@@ -64,6 +91,12 @@
         width: 80%;
         h4{
             left: 3vw;
+        }
+        .add{
+            left: 20vw;
+        }
+        .take{
+            right: -23vw;
         }
         span{
             left: 13vw;
