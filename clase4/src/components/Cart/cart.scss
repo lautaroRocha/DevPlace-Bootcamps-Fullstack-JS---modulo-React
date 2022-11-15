@@ -27,7 +27,7 @@ h2{
     }
     
     .cart-foot{
-        background-color: var(--clear);
+        background-color: var(--tres);
         width: 60%;
         margin: 0 auto 5rem;
         transform: skewX(-15deg);
@@ -44,7 +44,7 @@ h2{
             color: var(--terciario);
             position: absolute;
             top: -15px;
-            filter: drop-shadow(-3px 3px 1px var(--tres));
+            filter: drop-shadow(-3px 3px 1px var(--clear));
         }
         span{
             position: absolute;
@@ -53,7 +53,7 @@ h2{
             color: var(--terciario);
             font-size: 1.5rem;
             top: -10px;
-            filter: drop-shadow(-3px 3px 1px var(--tres));
+            filter: drop-shadow(-3px 3px 1px var(--clear));
             &:before{
                 content: "$";
             }

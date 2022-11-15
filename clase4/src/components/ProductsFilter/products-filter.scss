@@ -38,3 +38,10 @@
     }
 }
 
+@media(min-width:900px){
+    .filter{
+        ul{
+            flex-direction: column;
+        }
+    }
+}

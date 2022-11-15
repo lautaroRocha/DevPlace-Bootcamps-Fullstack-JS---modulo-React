@@ -35,6 +35,6 @@
     height: 50%;
     width: 90%; }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .intro {
     flex-direction: row; } }
