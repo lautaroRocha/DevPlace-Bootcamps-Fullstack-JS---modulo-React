@@ -1,38 +1,16 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useMemo} from "react";
 import CartItem from "../../utilities/CartItem/CartItem"
 import './cart.css'
 
 function Cart(props){
 
-
-    const [currentOrder, setCurrentOrder] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0)
-
-    useEffect(() => {
-        let order = createOrder();
-        let settedOrder = new Set([...order].map(x => JSON.stringify(x)));
-        let cleanOrder = Array.from(settedOrder)
-        let arr = [];
-        cleanOrder.forEach((ele) => arr.push(JSON.parse(ele)))
-        setCurrentOrder(arr)
-    }, [currentOrder]);
 
     useEffect(() =>{
         let total = 0
-        currentOrder.forEach( (ele) => total = total + (parseInt(ele.price) * parseInt(ele.quantity)) );
+        props.cart.forEach( (ele) => total = total + (parseInt(ele.price) * parseInt(ele.quantity)) );
         setTotalPrice(total)
-    }, [currentOrder])
-
-    function createOrder(){
-        let order = [];
-        props.cart.forEach((obj)=>{
-            let numberOfSimilars = props.cart.filter( (ele) => { 
-            return ele.id == obj.id });
-            let orderedProduct = {"title" : obj.title, "quantity": numberOfSimilars.length, "price" : obj.price, "img": obj.img, "id" : obj.id}
-            order.push(orderedProduct)
-        })
-        return order;
-    }
+    }, [props.changes])
 
     return(
         <div className="wrapper">
@@ -44,8 +22,8 @@ function Cart(props){
                 <h3>Precio</h3>
             </div>
             <div className="cart-body">
-            {currentOrder.map((obj, idx)=>{
-                return(<CartItem obj={obj} key={idx} removeFromCart={props.removeFromCart}/>)
+            {props.cart.map((obj, idx)=>{
+                return(<CartItem obj={obj} key={idx} removeFromCart={props.removeFromCart} multiplyProductInCart={props.multiplyProductInCart}/>)
             })}
             </div>
             <div className="cart-foot">

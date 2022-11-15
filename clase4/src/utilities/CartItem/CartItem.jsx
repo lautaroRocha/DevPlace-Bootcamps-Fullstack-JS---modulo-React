@@ -3,17 +3,15 @@ import './cartitem.css'
 
 function CartItem(props){
 
-    let obj = props.obj
-
     return(
         <div className="cart-item">
-                <h4>{obj.title}</h4>
+                <h4>{props.obj.title}</h4>
                 <div>
-                    <span className="cart-btn add">+</span>
-                    <span>{obj.quantity}</span>
+                    <span className="cart-btn add" onClick={props.multiplyProductInCart}>+</span>
+                    <span>{props.obj.quantity}</span>
                     <span className="cart-btn take" onClick={props.removeFromCart}>-</span>
                 </div>
-                <span>{obj.price}</span>
+                <span>{props.obj.price}</span>
         </div>
     )
 }

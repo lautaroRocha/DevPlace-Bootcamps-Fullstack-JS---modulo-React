@@ -21,10 +21,16 @@ export function App() {
   const [theme, setTheme] = useState('dark');
   const [products, setProducts] = useState()
   const [cart, setCart] = useState([])
+  const [changes, setChanges] = useState(false)
 
   function addToCart(prdct){
     let currentOrder = cart;
-    currentOrder.push(prdct);
+    if(currentOrder.includes(prdct)){
+      let productIndex = currentOrder.indexOf(prdct)
+      currentOrder[productIndex].quantity ++
+    }else{
+      currentOrder.push(prdct);
+    }
     setCart(currentOrder)
   }
 
@@ -33,10 +39,30 @@ export function App() {
     let productName = e.target.parentElement.parentElement.firstChild.textContent;
     let selectedObject = arr.find( (ele) => ele.title === productName);
     let selectedIndex = arr.indexOf(selectedObject)
-    arr.splice(selectedIndex, 1)
+    selectedObject.quantity = selectedObject.quantity - 1;
+    if(selectedObject.quantity <= 0){
+      arr.splice(selectedIndex, 1)
+    }else{
+      arr.splice(selectedIndex, 1, selectedObject)
+    }
     setCart(arr)
-}
+    changes ? setChanges(false) : setChanges(true)
+  }
 
+  function multiplyProductInCart(e){
+    let arr = cart;
+    let productName = e.target.parentElement.parentElement.firstChild.textContent;
+    let selectedObject = arr.find( (ele) => ele.title === productName);
+    if(arr.includes(selectedObject)){
+      let productIndex = arr.indexOf(selectedObject)
+      arr[productIndex].quantity ++
+    }else{
+      arr.push(selectedObject);
+    }
+    setCart(arr)
+    changes ? setChanges(false) : setChanges(true)
+  }
+  
   function switchTheme(){
     theme === 'dark' ? setTheme('light') : setTheme('dark')
   }
@@ -47,6 +73,9 @@ export function App() {
     .then(data => setProducts(data));
   }, []);
     
+  useEffect(() =>{
+
+  }, [cart])
 
   return (
     <>
@@ -56,7 +85,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Intro />}/>
         <Route path="/productos" element={<ProductsGrid />}/>
-        <Route path="/carrito" element={<Cart cart={cart} setCart={setCart} removeFromCart={removeFromCart}/>}/>
+        <Route path="/carrito" element={<Cart changes={changes} cart={cart} setCart={setCart} removeFromCart={removeFromCart} multiplyProductInCart={multiplyProductInCart}/>}/>
         <Route path="/marca" element={<Brand />}/>
         <Route path="/faq" element={<Faq />}/>
         <Route path="/productos/producto/:id" element={<ProductDetail addToCart={addToCart}/>}/>
