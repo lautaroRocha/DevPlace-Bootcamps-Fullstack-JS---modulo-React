@@ -33,13 +33,25 @@ function Cart(props){
         return order;
     }
 
-
     return(
         <div className="wrapper">
-        {currentOrder.map((obj, idx)=>{
-            return(<CartItem obj={obj} key={idx}/>)
-        })}
-        <p>{totalPrice}</p>
+            <h2>Carrito</h2>
+        <div className="cart">
+            <div className="cart-head">
+                <h3>Articulo</h3>
+                <h3>Cantidad</h3>
+                <h3>Precio</h3>
+            </div>
+            <div className="cart-body">
+            {currentOrder.map((obj, idx)=>{
+                return(<CartItem obj={obj} key={idx}/>)
+            })}
+            </div>
+            <div className="cart-foot">
+                <h5>total</h5>
+                <span>{totalPrice}</span>
+            </div>
+        </div>
         </div>
     )
 }

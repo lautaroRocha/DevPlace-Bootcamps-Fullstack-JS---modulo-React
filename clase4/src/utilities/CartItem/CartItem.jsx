@@ -7,14 +7,9 @@ function CartItem(props){
 
     return(
         <div className="cart-item">
-            <div className="cart-item-col">
-                <h2>{obj.title}</h2>
-                <img src={obj.img} alt="" />
-            </div>
-            <div className="cart-item-col">
-                <span>{obj.price}</span>
+                <h4>{obj.title}</h4>
                 <span>{obj.quantity}</span>
-            </div>
+                <span>{obj.price}</span>
         </div>
     )
 }
