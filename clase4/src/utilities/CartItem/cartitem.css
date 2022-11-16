@@ -49,6 +49,8 @@
     left: 8vw; }
   .cart-item .take {
     right: -13vw; }
+    .cart-item .take:before {
+      content: ""; }
   .cart-item .price-tag {
     left: -5px; }
     .cart-item .price-tag::before {
