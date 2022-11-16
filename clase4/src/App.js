@@ -20,8 +20,19 @@ export function App() {
   
   const [theme, setTheme] = useState('dark');
   const [products, setProducts] = useState()
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState()
   const [changes, setChanges] = useState(false)
+
+  useEffect(() => {
+    fetch('todos.json')
+    .then(res => res.json())
+    .then(data => setProducts(data));
+  }, []);
+
+  useEffect(()=>{
+    let order = localStorage.getItem('order');
+    order ? setCart(JSON.parse(order)) : setCart([])
+  }, [])
 
   function addToCart(prdct){
     let currentOrder = cart;
@@ -32,6 +43,7 @@ export function App() {
       currentOrder.push(prdct);
     }
     setCart(currentOrder)
+    saveOrderInLocalStorage()
   }
 
   function removeFromCart(e){
@@ -46,6 +58,7 @@ export function App() {
       arr.splice(selectedIndex, 1, selectedObject)
     }
     setCart(arr)
+    saveOrderInLocalStorage()
     changes ? setChanges(false) : setChanges(true)
   }
 
@@ -60,22 +73,17 @@ export function App() {
       arr.push(selectedObject);
     }
     setCart(arr)
+    saveOrderInLocalStorage()
     changes ? setChanges(false) : setChanges(true)
+  }
+
+  function saveOrderInLocalStorage(){
+    localStorage.setItem('order', JSON.stringify(cart));
   }
   
   function switchTheme(){
     theme === 'dark' ? setTheme('light') : setTheme('dark')
   }
-
-  useEffect(() => {
-    fetch('todos.json')
-    .then(res => res.json())
-    .then(data => setProducts(data));
-  }, []);
-    
-  useEffect(() =>{
-
-  }, [cart])
 
   return (
     <>

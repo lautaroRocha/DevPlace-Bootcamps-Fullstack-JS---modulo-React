@@ -22,7 +22,8 @@ function Cart(props){
                 <h3>Precio</h3>
             </div>
             <div className="cart-body">
-            {props.cart.map((obj, idx)=>{
+            {props.cart !== [] &&
+            props.cart.map((obj, idx)=>{
                 return(<CartItem obj={obj} key={idx} removeFromCart={props.removeFromCart} multiplyProductInCart={props.multiplyProductInCart}/>)
             })}
             </div>
