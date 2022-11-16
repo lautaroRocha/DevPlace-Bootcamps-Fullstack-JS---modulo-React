@@ -45,7 +45,7 @@
     .card:hover .card-img {
       transform: scale(1.7);
       z-index: 3;
-      filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.3)); }
+      filter: drop-shadow(1px 1px 5px black) drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.5)); }
     .card:hover .card-title, .card:hover .card-price {
       opacity: .7;
       letter-spacing: 0;
