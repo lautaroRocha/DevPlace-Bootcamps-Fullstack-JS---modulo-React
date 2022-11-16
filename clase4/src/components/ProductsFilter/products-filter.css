@@ -8,14 +8,13 @@
     list-style: none;
     justify-content: center; }
     .filter ul li {
-      background-color: var(--terciario);
       padding: .5rem;
       border-radius: 50%;
       box-shadow: 3px 1px 1px black;
       font-weight: bolder;
       cursor: pointer;
-      height: 3rem;
-      width: 3rem;
+      height: 4rem;
+      width: 4rem;
       text-align: center;
       color: transparent;
       display: flex;
@@ -23,9 +22,7 @@
       justify-content: center; }
       .filter ul li :active {
         box-shadow: none;
-        cursor: pointer;
-        background-color: #aaaa22;
-        color: var(--dos); }
+        cursor: pointer; }
       .filter ul li svg {
         fill: var(--clear);
         transform: scale(1.5);
@@ -34,4 +31,6 @@
 
 @media (min-width: 900px) {
   .filter ul {
-    flex-direction: column; } }
+    flex-direction: column;
+    align-items: end;
+    margin-top: 20vh; } }

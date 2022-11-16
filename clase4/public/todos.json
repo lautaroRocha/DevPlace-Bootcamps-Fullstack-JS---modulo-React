@@ -1,6 +1,6 @@
 [  { 
     "title": "ruta 720",
-    "img": "https://http2.mlstatic.com/D_NQ_NP_890180-MLA41505463622_042020-O.webp",
+    "img": "https://cdn.bbike-cdn.com.cn/benelli.bike/media/34814/conversions/e3906517aeadb015e4779095f0e78589-md.png",
     "price": 140000,
     "type" : "Bicicletas",
     "quantity" : 1,
@@ -8,7 +8,7 @@
 },
 {
     "title": "urbana 620",
-    "img": "https://http2.mlstatic.com/D_NQ_NP_2X_655268-MLA49704869134_042022-F.webp",
+    "img": "https://cdn.shopify.com/s/files/1/0275/2426/8118/products/S35408M10SM_700M_SuperSport-BLK_1200x.png?v=1633410116",
     "price": 100000,
     "type" : "Bicicletas",
     "quantity" : 1,
@@ -38,7 +38,7 @@
     "id" : 5
 }, {
     "title": "mthelm",
-    "img": "https://www.rei.com/media/product/129600",
+    "img": "https://cdn.shopify.com/s/files/1/0032/9023/4992/products/HB18-FFMBLGMIPS_01_df7769e8-1077-4f15-91fb-b311fff5b6d4.png?v=1622793707&width=2048",
     "price": 12000,
     "type" : "Cascos",
     "quantity" : 1,
@@ -46,21 +46,21 @@
 },
 { 
     "title": "jersey 101",
-    "img": "https://http2.mlstatic.com/D_NQ_NP_2X_676015-MLA49922732168_052022-F.webp",
+    "img": "https://www.spized.com/media/9d/6c/45/1639577788/radtrikot6-min.png",
     "price": "14000",
     "type" : "Indumentaria",
     "quantity" : 1,
     "id" : 7
 },{
     "title": "kit badana",
-    "img": "https://http2.mlstatic.com/D_NQ_NP_2X_716989-MLA31662428389_082019-F.webp",
+    "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/312/744/products/calza-ciclista-diadora-con-badana-protectoramedia-ciclista1-bb71a762abad79871216039319050221-1024-1024.png",
     "price": 9000,
     "type" : "Indumentaria",
     "quantity" : 1,
     "id" : 8
 }, {
     "title": "giyo clipless",
-    "img": "https://http2.mlstatic.com/D_NQ_NP_2X_884032-MLA45213270232_032021-F.webp",
+    "img": "https://cdn.shopify.com/s/files/1/0251/7309/8543/products/Shoe1_2000x.png?v=1617736229",
     "price": 32000 ,
     "type" : "Indumentaria",
     "quantity" : 1,

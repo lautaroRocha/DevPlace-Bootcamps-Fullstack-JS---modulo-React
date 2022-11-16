@@ -8,14 +8,13 @@
         list-style: none;
         justify-content: center;
     li {
-        background-color: var(--terciario);
         padding: .5rem;
         border-radius: 50%;
         box-shadow: 3px 1px 1px black;
         font-weight: bolder;
         cursor: pointer;
-        height: 3rem;
-        width: 3rem;
+        height: 4rem;
+        width: 4rem;
         text-align: center;
         color: transparent;
         display: flex;
@@ -24,9 +23,6 @@
         :active{
             box-shadow: none;
             cursor: pointer;
-            background-color: hsl(60, 67%, 40%);
-            color: var(--dos);
-        
         }
         svg{
             fill: var(--clear);
@@ -42,6 +38,8 @@
     .filter{
         ul{
             flex-direction: column;
+            align-items: end;
+            margin-top: 20vh;
         }
     }
 }

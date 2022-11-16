@@ -32,6 +32,7 @@ function Cart(props){
             </div>
         </div>
         <div className="back-img-3"></div>
+        <div className="back-img-2"></div>
         </div>
     )
 }
