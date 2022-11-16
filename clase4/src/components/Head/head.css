@@ -25,21 +25,18 @@ header {
       text-decoration: none; }
     header div h1 {
       color: var(--terciario);
-      transform: skewY(-10deg);
       font-size: clamp(2rem, 10vw, 4rem);
-      position: relative; }
-      header div h1:before {
-        content: "s";
-        height: 20%;
-        font-size: 1px;
-        color: var(--clear);
-        background-color: var(--clear);
-        width: 100%;
+      text-transform: uppercase;
+      position: relative;
+      opacity: .9; }
+      header div h1:after {
+        content: "bikes";
         position: absolute;
-        z-index: -1;
-        margin-top: 2.3rem;
-        transform: skewY(15deg);
-        opacity: .7; }
+        color: var(--clear);
+        right: 0;
+        bottom: 0;
+        font-size: clamp(0.5rem, 3vw, 1.5rem);
+        letter-spacing: 1ch; }
     header div svg {
       fill: var(--clear);
       width: 2rem;

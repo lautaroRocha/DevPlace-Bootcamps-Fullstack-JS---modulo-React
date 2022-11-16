@@ -11,10 +11,10 @@ const ProductsFilter = (props) => {
         <>
         <div className="filter">
          <ul >
-            <li onClick={props.filterProducts} cat="Bicicletas">Bicicletas{icons.bikes}</li>
-            <li onClick={props.filterProducts}>{icons.helmets}Cascos</li>
-            <li onClick={props.filterProducts}>{icons.clothing}Indumentaria</li>
-            <li onClick={() => {props.setSelectedProducts(products)}}>{icons.all}</li>
+            <li className='glass' onClick={props.filterProducts} cat="Bicicletas">Bicicletas{icons.bikes}</li>
+            <li className='glass' onClick={props.filterProducts}>{icons.helmets}Cascos</li>
+            <li className='glass' onClick={props.filterProducts}>{icons.clothing}Indumentaria</li>
+            <li className='glass' onClick={() => {props.setSelectedProducts(products)}}>{icons.all}</li>
         </ul>
         </div>
         </>

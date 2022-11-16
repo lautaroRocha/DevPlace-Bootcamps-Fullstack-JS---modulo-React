@@ -31,6 +31,8 @@ function Cart(props){
                 <span>{totalPrice}</span>
             </div>
         </div>
+        <div className="back-img-3"></div>
+        <div className="back-img-2"></div>
         </div>
     )
 }

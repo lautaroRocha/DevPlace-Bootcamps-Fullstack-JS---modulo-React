@@ -6,19 +6,50 @@
   justify-content: center;
   align-items: center;
   width: 200px;
-  height: 250px;
-  padding: .5rem;
-  border-radius: 5px;
-  background-color: var(--terciario); }
+  height: 150px;
+  border-radius: 50% 35px;
+  transition: all .5s ease-in-out;
+  position: relative; }
   .card .card-title {
     font-weight: bolder;
-    text-transform: capitalize; }
+    text-transform: capitalize;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: var(--clear);
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    transition: inherit;
+    letter-spacing: .5ch;
+    z-index: 10; }
   .card .card-img {
-    width: 80%;
-    height: 100%;
-    padding: .5rem; }
+    width: 100%;
+    height: auto;
+    padding: .5rem;
+    transition: inherit;
+    transform: rotate(-5deg); }
   .card .card-price {
-    font-weight: bold; }
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: bold;
+    position: absolute;
+    color: var(--clear);
+    bottom: 10px;
+    right: -5px;
+    transition: inherit;
+    letter-spacing: .3ch;
+    z-index: 10; }
+    .card .card-price:before {
+      content: "$"; }
+  .card:hover {
+    transform: scale(0.8);
+    border-radius: 75px 100%; }
+    .card:hover .card-img {
+      transform: scale(1.7);
+      z-index: 3;
+      filter: drop-shadow(1px 1px 5px rgba(255, 255, 255, 0.3)); }
+    .card:hover .card-title, .card:hover .card-price {
+      opacity: .7;
+      letter-spacing: 0;
+      z-index: -1; }
 
 @media (min-width: 500px) {
   .card {

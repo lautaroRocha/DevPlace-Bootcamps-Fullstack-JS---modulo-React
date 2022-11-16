@@ -11,7 +11,7 @@ function CartItem(props){
                     <span>{props.obj.quantity}</span>
                     <span className="cart-btn take" onClick={props.removeFromCart}>-</span>
                 </div>
-                <span>{props.obj.price}</span>
+                <span className="price-tag">{props.obj.price}</span>
         </div>
     )
 }

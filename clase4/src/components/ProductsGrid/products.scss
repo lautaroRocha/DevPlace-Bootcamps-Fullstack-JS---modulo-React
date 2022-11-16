@@ -16,15 +16,19 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 3rem;
         height: 60vh;
-        overflow-x: scroll;
+        overflow-x: hidden;
+        padding: 2rem 0;
+        width: 80%;
+        -webkit-mask-image: linear-gradient( rgba(31,31,31,1) 90%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient( rgba(31,31,31,1) 90%, rgba(0,0,0,0) 100%);
         &::-webkit-scrollbar{
-                background-color: var(--back);
+                background-color: transparent;
                 width: 10px;
                 }
         &::-webkit-scrollbar-track{
-            background-color: var(--back);
+            background-color: transparent;
         }
         &::-webkit-scrollbar-thumb{
                 background-color: var(--terciario);
@@ -43,6 +47,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       align-items: flex-start;
+      padding-right: 1rem;
   }
 }
 }
@@ -66,6 +71,7 @@
     width: 100%;
     grid-row: 2/all;
     grid-column: 3/12;
+    gap: 1.5rem;
     >div{
         width: 20%;
         height: auto;

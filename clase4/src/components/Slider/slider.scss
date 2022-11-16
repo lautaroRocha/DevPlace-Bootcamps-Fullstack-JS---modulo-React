@@ -14,10 +14,13 @@
         max-height: 19rem;
     }
     .btn{
-        background-color: var(--terciario);
+        background-color: rgba(200, 11, 11, .7);
         padding: .5rem;
         display: grid;
         place-items: center;
+        &:hover{
+            cursor: pointer;
+        }
     }
     .back{
         position: absolute;
