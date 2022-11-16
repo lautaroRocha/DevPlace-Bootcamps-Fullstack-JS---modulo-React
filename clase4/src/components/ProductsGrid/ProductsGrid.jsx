@@ -37,6 +37,8 @@ function ProductsGrid(){
                 )}
                 </div>
             </div>
+            <div className="back-img-5"></div>
+            <div className="back-img-4"></div>
         </div>
         
         </>

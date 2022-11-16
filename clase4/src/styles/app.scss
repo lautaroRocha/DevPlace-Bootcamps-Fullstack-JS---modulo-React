@@ -44,4 +44,79 @@ html{
     height: 100%;
     padding-top: 22vh;
   }
+
+  .glass{
+    background: rgba(255, 32, 32, .3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.4px);
+    -webkit-backdrop-filter: blur(15.4px);
+    border: 1px solid rgba(255, 32, 32, 0.6);
+  }
   
+  .back-img{
+    background-image: url("../utilities/221011125747-01-british-cycling-shell.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 100vh; /* You must set a specified height */
+    width: 100%;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    z-index: -2000;
+    opacity: .09;
+    position: absolute;
+    top: 0vh;
+  }
+
+  .back-img-2{
+    background-image: url("../utilities/Giro_d\'Italia_2021\,_Stage_15.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 100vh; /* You must set a specified height */
+    width: 100%;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    z-index: -2000;
+    opacity: .09;
+    position: absolute;
+    top: 100vh;
+  }
+  .back-img-3{
+    background-image: url("../utilities/q36-5-cycling-clothing-1.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 100%; /* You must set a specified height */
+    width: 100%;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    z-index: -2000;
+    opacity: .09;
+    position: absolute;
+    top: 0;
+  }
+  .back-img-4{
+    background-image: url("../utilities/221011125747-01-british-cycling-shell.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 100vh; /* You must set a specified height */
+    width: 100%;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    z-index: -2000;
+    opacity: .09;
+    position: absolute;
+    top: 100vh;
+  }
+  .back-img-5{
+    background-image: url("../utilities/Giro_d\'Italia_2021\,_Stage_15.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 100vh; /* You must set a specified height */
+    width: 100%;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    z-index: -2000;
+    opacity: .10;
+    position: absolute;
+    top: 0vh;
+  }
