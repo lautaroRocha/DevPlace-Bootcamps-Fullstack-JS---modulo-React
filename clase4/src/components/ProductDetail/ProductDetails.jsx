@@ -1,6 +1,8 @@
 import React, {useContext, useState} from "react";
 import { Link, useParams } from "react-router-dom";
 import { ProductsContext } from "../../App";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './productdetail.css'
 
 function ProductDetail(props){
@@ -10,6 +12,7 @@ function ProductDetail(props){
     let params = useParams();
     
     let obj = products.find( ele => ele.id == params.id )
+
 
     return(
         <>
@@ -28,6 +31,16 @@ function ProductDetail(props){
                     <Link className="glass" to="/productos">
                         VOLVER
                     </Link>
+                    <ToastContainer position="top-right"
+                        autoClose={1000}
+                        hideProgressBar={true}
+                        newestOnTop={true}
+                        closeOnClick
+                        rtl={true}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"/>
                 </div>
             </div>
         </div>

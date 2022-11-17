@@ -150,3 +150,7 @@ html {
 
 ::-webkit-scrollbar {
   width: 0px; }
+
+.toast {
+  background-color: var(--back);
+  color: var(--clear); }

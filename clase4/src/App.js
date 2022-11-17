@@ -8,7 +8,7 @@ import Faq from './components/FAQ/FAQ';
 import Footer from './components/Footer/Footer';
 import Cart from './components/Cart/Cart';
 import React, {useState, createContext, useEffect} from 'react';
-
+import { toast } from 'react-toastify';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
@@ -53,6 +53,7 @@ export function App() {
     }
     setCart(currentOrder)
     saveOrderInLocalStorage()
+    toast(`Se añadió ${prdct.title} al carrito`)
   }
 
   function removeFromCart(e){
