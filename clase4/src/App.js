@@ -22,6 +22,13 @@ export function App() {
   const [products, setProducts] = useState()
   const [cart, setCart] = useState()
   const [changes, setChanges] = useState(false)
+  
+  const [userData, setUserData] = useState({
+    firstName : "", 
+    lastName : "", 
+    delivery : "" ,
+    cardID : [], 
+    cardEXP : []})
 
   useEffect(() => {
     fetch('todos.json')
@@ -93,7 +100,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Intro />}/>
         <Route path="/productos" element={<ProductsGrid />}/>
-        <Route path="/carrito" element={<Cart changes={changes} cart={cart} setCart={setCart} removeFromCart={removeFromCart} multiplyProductInCart={multiplyProductInCart}/>}/>
+        <Route path="/carrito" element={<Cart changes={changes} setChanges={setChanges} cart={cart} setCart={setCart} removeFromCart={removeFromCart} multiplyProductInCart={multiplyProductInCart} userData={userData} setUserData={setUserData}/>}/>
         <Route path="/marca" element={<Brand />}/>
         <Route path="/faq" element={<Faq />}/>
         <Route path="/productos/producto/:id" element={<ProductDetail addToCart={addToCart}/>}/>

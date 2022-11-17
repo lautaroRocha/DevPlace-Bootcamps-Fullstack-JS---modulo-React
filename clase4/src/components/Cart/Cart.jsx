@@ -1,13 +1,12 @@
 import React, {useState, useEffect} from "react";
 import { Link} from "react-router-dom";
-
 import CartItem from "../../utilities/CartItem/CartItem"
 import './cart.css'
 
 function Cart(props){
 
     const [totalPrice, setTotalPrice] = useState(0)
-
+ 
     const [stage, setStage] = useState(1)
 
     useEffect(() =>{
@@ -16,8 +15,17 @@ function Cart(props){
         setTotalPrice(total)
     }, [props.changes])
     
+    function updateUserData(e, sec){
+        let data = props.userData;
+        data[sec] = e.target.value
+        props.setUserData(data)
+        props.changes ? props.setChanges(false) : props.setChanges(true)
+    }
+
     let renderStage;
 
+
+    ///cada caso será refactorizado a un componente separado
     switch(stage){
             case 1:
             renderStage = 
@@ -37,18 +45,43 @@ function Cart(props){
                 <h5>total</h5>
                 <span>{totalPrice}</span>
             </div>
-                <button onClick={()=>{setStage(2)}}>COMPRAR</button>
+                <button className="btn-one" onClick={()=>{setStage(2)}}>COMPRAR</button>
             </div>
             break;
             case 2:
             renderStage = 
             <div className="client-data">
-                <form action="
-                " style={{
-                    display: "flex",
-                    flexDirection: "column"
-                }}>
-                    <input type="text" /><input type="text" /><input type="text" /><input type="text" /><input type="text" />
+                <h3>¡Tu orden está casi lista!</h3>
+                <p>Completá los datos de pago y entrega para recibir tu pedido</p>
+                <form action="">
+                    <div>
+                        <label htmlFor="name">
+                            <input placeholder=" Nombre" type="text" name="name" onChange={(e) => {updateUserData(e, 'firstName')}}/>
+                        </label>
+                        <label htmlFor="last-name">
+                            <input placeholder="A pellido" type="text" name="last-name" onChange={(e) => {updateUserData(e, 'lastName')}}/>
+                        </label>
+                    </div>
+                    <label htmlFor="payment-method">
+                        <select name="payment-method">Retiro en correo
+                            <option value="home delivery" >Entrega a domicilio</option>
+                            <option value="post office" >Retiro en correo</option>
+                        </select>
+                    </label>
+                    <div className="client-card">
+                        <div className="client-card-name">
+                            <span>{props.userData.firstName}</span>
+                            <span>{props.userData.lastName}</span>
+                        </div>
+                    </div>
+                   <div className="client-card-data">
+                     <label htmlFor="card-num"> Numero de tarjeta
+                         <input type="number" name="card-num" />
+                     </label>
+                     <label htmlFor="card-exp" id="card-exp"> Vencimiento
+                         <input type="number" name="card-exp" />
+                     </label>
+                   </div>
                 </form>
                 <button onClick={()=>{setStage(3)}}>Confirmar compra</button>
             </div>;
@@ -67,8 +100,6 @@ function Cart(props){
         <div className="wrapper">
             <h2>Carrito</h2>
             {renderStage}
-
-
         <div className="back-img-3"></div>
         <div className="back-img-2"></div>
         </div>
