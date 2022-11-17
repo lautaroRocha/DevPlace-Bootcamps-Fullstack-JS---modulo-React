@@ -22,8 +22,29 @@ function Cart(props){
         props.changes ? props.setChanges(false) : props.setChanges(true)
     }
 
-    let renderStage;
+    function sendOrder(){
+        let data = props.userData;
+        let order = JSON.stringify(props.cart);
 
+        data.order = order;
+        console.log(data)
+        props.setUserData(data)
+        cleanCart();
+        setTimeout(setStage(3), 2500)
+        console.log(props.userData);
+        props.setUserData({firstName : "", 
+        lastName : "", 
+        delivery : "" ,
+        cardID : ["x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x"], 
+        cardEXP : "mm/aa",
+        order : {}})
+    }
+
+    function cleanCart(){
+        localStorage.removeItem('order');
+    }
+
+    let renderStage;
 
     ///cada caso será refactorizado a un componente separado
     switch(stage){
@@ -62,8 +83,8 @@ function Cart(props){
                             <input placeholder="A pellido" type="text" name="last-name" onChange={(e) => {updateUserData(e, 'lastName')}}/>
                         </label>
                     </div>
-                    <label htmlFor="payment-method">
-                        <select name="payment-method">Retiro en correo
+                    <label htmlFor="pickup-method">
+                        <select name="píckuy-method" onChange={(e)=>{updateUserData(e, 'delivery')}}>
                             <option value="home delivery" >Entrega a domicilio</option>
                             <option value="post office" >Retiro en correo</option>
                         </select>
@@ -73,29 +94,32 @@ function Cart(props){
                             <span>{props.userData.firstName}</span>
                             <span>{props.userData.lastName}</span>
                         </div>
+                        <div className="client-card-numbers">
+                            <p>{props.userData.cardID}</p>
+                            <span>{props.userData.cardEXP}</span>
+                        </div>
                     </div>
                    <div className="client-card-data">
-                     <label htmlFor="card-num"> Numero de tarjeta
-                         <input type="number" name="card-num" />
+                     <label htmlFor="card-num" > 
+                         <input  placeholder="Número de tarjeta..." type="text" name="card-num"  maxLength='13'onChange={(e) => {updateUserData(e, 'cardID')}}/>
                      </label>
-                     <label htmlFor="card-exp" id="card-exp"> Vencimiento
-                         <input type="number" name="card-exp" />
+                     <label htmlFor="card-exp" id="card-exp"> 
+                         <input placeholder="Vencimiento... (mm/aa)" type="text" name="card-exp" onChange={(e) => {updateUserData(e, 'cardEXP')}}/>
                      </label>
                    </div>
                 </form>
-                <button onClick={()=>{setStage(3)}}>Confirmar compra</button>
+                <button onClick={sendOrder}>Confirmar compra</button>
             </div>;
             break;
             case 3:
             renderStage = 
             <div className="client-data">
                     <h1>GRACIAS POR SU COMPRA</h1>
-                    <Link to="/productos" onClick={()=>{setStage(1)}}>
+                    <Link to="/" onClick={()=>{setStage(1)}}>
                         VOLVER</Link>
             </div>
     }
     
-
     return(
         <div className="wrapper">
             <h2>Carrito</h2>

@@ -94,7 +94,25 @@ h2 {
       background: linear-gradient(332deg, #2807d6 27%, #a3bddb 100%);
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2807d6",endColorstr="#a3bddb",GradientType=1);
       border-radius: 25px;
-      margin: 1rem auto; }
+      margin: 1rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      font-family: 'Courier New', Courier, monospace;
+      text-transform: uppercase; }
+      .client-data form .client-card .client-card-name {
+        display: flex;
+        width: 90%;
+        gap: 1rem;
+        text-transform: uppercase;
+        margin-top: 1rem; }
+      .client-data form .client-card .client-card-numbers {
+        display: flex;
+        width: 90%;
+        gap: 2rem; }
+        .client-data form .client-card .client-card-numbers p, .client-data form .client-card .client-card-numbers span {
+          position: relative; }
     .client-data form .client-card-data {
       display: flex;
       justify-content: center;

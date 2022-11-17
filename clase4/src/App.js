@@ -22,13 +22,15 @@ export function App() {
   const [products, setProducts] = useState()
   const [cart, setCart] = useState()
   const [changes, setChanges] = useState(false)
-  
+
   const [userData, setUserData] = useState({
     firstName : "", 
     lastName : "", 
     delivery : "" ,
-    cardID : [], 
-    cardEXP : []})
+    cardID : ["x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x"], 
+    cardEXP : "mm/aa",
+    order : {}
+  })
 
   useEffect(() => {
     fetch('todos.json')
