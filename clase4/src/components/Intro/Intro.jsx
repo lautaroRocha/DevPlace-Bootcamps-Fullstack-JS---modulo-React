@@ -9,16 +9,14 @@ function Intro(){
 
     return(
         <>
-       <>
-                <div className="intro">
-                    <div className="intro-txt">
-                        <h1>¡Bienvenidos a <span>Cyclops!</span></h1>
-                        <p>tu tienda de ciclismo</p>
-                    </div>
-                        <Slider pics={imgForCarru}/>
-                </div>
-                <div className="back-img"></div>
-                </>
+        <div className="intro">
+            <div className="intro-txt">
+                <h1>¡Bienvenidos a <span>Cyclops!</span></h1>
+                <p>tu tienda de ciclismo</p>
+            </div>
+            <Slider pics={imgForCarru}/>
+        </div>
+        <div className="back-img"></div>
         </>
     )
 }

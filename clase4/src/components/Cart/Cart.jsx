@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Link} from "react-router-dom";
-import CartStageOne from "../../utilities/cartStageOne";
-import CartStageTwo from "../../utilities/cartStageTwo";
+import CartStageOne from "../../utilities/CartStages/cartStageOne";
+import CartStageTwo from "../../utilities/CartStages/cartStageTwo";
 import './cart.css'
 
 function Cart(props){
@@ -9,6 +9,8 @@ function Cart(props){
     const [totalPrice, setTotalPrice] = useState(0)
  
     const [stage, setStage] = useState(1)
+
+    const defaultValues = ["", "mm/aa", ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'] ]
 
     useEffect(() =>{
         let total = 0
@@ -27,17 +29,15 @@ function Cart(props){
         let data = props.userData;
         let order = JSON.stringify(props.cart);
         data.order = order;
-        console.log(data)
         props.setUserData(data)
         cleanCart();
         setTimeout(setStage(3), 2500)
-        console.log(props.userData);
-        props.setUserData({firstName : "", 
-        lastName : "", 
-        delivery : "" ,
-        cardID : ["x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x"], 
-        cardEXP : "mm/aa",
-        order : {}})
+        props.setUserData({firstName : defaultValues[0], 
+            lastName : defaultValues[0], 
+            delivery : defaultValues[0],
+            cardID : defaultValues[2], 
+            cardEXP : defaultValues[1],
+            order : {}})
     }
 
     function cleanCart(){
@@ -45,16 +45,15 @@ function Cart(props){
     }
 
     function checkData(){
-        let valores = Object.values(props.userData)
-        console.log(valores)
-        if(valores.includes("") || valores.includes("mm/aa") || valores.includes(['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'])){
+        let valuesOfUserData = Object.values(props.userData)
+        console.log(...defaultValues)
+        if(valuesOfUserData.includes(...defaultValues)){
             alert('debes llenar todos los campos');
             return;
         }else{
             sendOrder();
         }
     }
-
 
     let renderStage;
 

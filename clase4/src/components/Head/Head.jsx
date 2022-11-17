@@ -69,10 +69,6 @@ function Head(props){
         }
     }
 
-
-
-
-
     return(
         <header ref={header}>
             <div className="logo">
@@ -84,8 +80,8 @@ function Head(props){
             <nav ref={nav}>
                 <ul>
                     <Link to="/productos" >Productos</Link>
-                    <Link to="/marca" >Marca</Link>
-                    <Link to="/faq">FAQ</Link>
+                    <Link to="/" >Marca</Link>
+                    <Link to="/">FAQ</Link>
                     <Link to="/carrito">carrito</Link>
                     <Link onClick={props.switchTheme}>{sunIcon}</Link>
                 </ul>

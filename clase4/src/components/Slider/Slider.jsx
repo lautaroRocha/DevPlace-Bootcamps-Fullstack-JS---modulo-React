@@ -6,8 +6,7 @@ function Slider(props){
     const [display, setDisplay] = useState(0)
 
     const moveItem = (e) => {
-        let btn = e.target.className
-        switch(btn){
+        switch(e.target.className){
             case "btn back":
                 setDisplay(display - 1);
                 loopImages();

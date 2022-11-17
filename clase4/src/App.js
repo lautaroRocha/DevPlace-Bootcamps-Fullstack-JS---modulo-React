@@ -45,8 +45,7 @@ export function App() {
   function addToCart(prdct){
     let currentOrder = cart;
     if(currentOrder.includes(prdct)){
-      let productIndex = currentOrder.indexOf(prdct)
-      currentOrder[productIndex].quantity ++
+      currentOrder[currentOrder.indexOf(prdct)].quantity ++
     }else{
       currentOrder.push(prdct);
     }
@@ -68,7 +67,7 @@ export function App() {
     }
     setCart(arr)
     saveOrderInLocalStorage()
-    changes ? setChanges(false) : setChanges(true)
+    checkForChanges();
   }
 
   function multiplyProductInCart(e){
@@ -83,7 +82,7 @@ export function App() {
     }
     setCart(arr)
     saveOrderInLocalStorage()
-    changes ? setChanges(false) : setChanges(true)
+    checkForChanges()
   }
 
   function saveOrderInLocalStorage(){
@@ -94,6 +93,10 @@ export function App() {
     theme === 'dark' ? setTheme('light') : setTheme('dark')
   }
 
+  function checkForChanges(){
+    changes ? setChanges(false) : setChanges(true)
+  }
+  
   return (
     <>
     <BrowserRouter>
@@ -103,8 +106,8 @@ export function App() {
         <Route path="/" element={<Intro />}/>
         <Route path="/productos" element={<ProductsGrid />}/>
         <Route path="/carrito" element={<Cart changes={changes} setChanges={setChanges} cart={cart} setCart={setCart} removeFromCart={removeFromCart} multiplyProductInCart={multiplyProductInCart} userData={userData} setUserData={setUserData}/>}/>
-        <Route path="/marca" element={<Brand />}/>
-        <Route path="/faq" element={<Faq />}/>
+        {/* <Route path="/marca" element={<Brand />}/> */}
+        {/* <Route path="/faq" element={<Faq />}/> */}
         <Route path="/productos/producto/:id" element={<ProductDetail addToCart={addToCart}/>}/>
       </Routes>
     </ProductsContext.Provider>
