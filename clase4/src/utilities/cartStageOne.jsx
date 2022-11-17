@@ -20,7 +20,10 @@ const CartStageOne = (props) => {
             <h5>total</h5>
             <span>{props.totalPrice}</span>
         </div>
-            <button className="btn-one" onClick={()=>{props.setStage(2)}}>COMPRAR</button>
+        {
+          props.totalPrice !== 0 && <button className="btn-one" onClick={()=>{props.setStage(2)}}>COMPRAR</button>
+
+        }
         </div>
 
     );
