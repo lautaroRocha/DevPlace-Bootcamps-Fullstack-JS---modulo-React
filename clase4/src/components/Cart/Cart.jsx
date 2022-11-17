@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Link} from "react-router-dom";
-import CartItem from "../../utilities/CartItem/CartItem"
+import CartStageOne from "../../utilities/cartStageOne";
+import CartStageTwo from "../../utilities/cartStageTwo";
 import './cart.css'
 
 function Cart(props){
@@ -25,7 +26,6 @@ function Cart(props){
     function sendOrder(){
         let data = props.userData;
         let order = JSON.stringify(props.cart);
-
         data.order = order;
         console.log(data)
         props.setUserData(data)
@@ -58,71 +58,12 @@ function Cart(props){
 
     let renderStage;
 
-    ///cada caso será refactorizado a un componente separado
     switch(stage){
             case 1:
-            renderStage = 
-            <div className="cart">
-            <div className="cart-head">
-                <h3>Articulo</h3>
-                <h3>Cantidad</h3>
-                <h3>Precio</h3>
-            </div>
-            <div className="cart-body">
-            {props.cart !== [] &&
-            props.cart.map((obj, idx)=>{
-                return(<CartItem obj={obj} key={idx} removeFromCart={props.removeFromCart} multiplyProductInCart={props.multiplyProductInCart}/>)
-            })}
-            </div>
-            <div className="cart-foot">
-                <h5>total</h5>
-                <span>{totalPrice}</span>
-            </div>
-                <button className="btn-one" onClick={()=>{setStage(2)}}>COMPRAR</button>
-            </div>
+            renderStage = <CartStageOne cart={props.cart} removeFromCart={props.removeFromCart} multiplyProductInCart={props.multiplyProductInCart} totalPrice={totalPrice} setStage={setStage}/>
             break;
             case 2:
-            renderStage = 
-            <div className="client-data">
-                <h3>¡Tu orden está casi lista!</h3>
-                <p>Completá los datos de pago y entrega para recibir tu pedido</p>
-                <form action="">
-                    <div>
-                        <label htmlFor="name">
-                            <input placeholder=" Nombre" type="text" name="name" onChange={(e) => {updateUserData(e, 'firstName')}}/>
-                        </label>
-                        <label htmlFor="last-name">
-                            <input placeholder="A pellido" type="text" name="last-name" onChange={(e) => {updateUserData(e, 'lastName')}}/>
-                        </label>
-                    </div>
-                    <label htmlFor="pickup-method">
-                        <select name="pickup-method" onChange={(e)=>{updateUserData(e, 'delivery')}}>
-                            <option >...</option>
-                            <option value="home delivery" >Entrega a domicilio</option>
-                            <option value="post office" >Retiro en correo</option>
-                        </select>
-                    </label>
-                    <div className="client-card">
-                        <div className="client-card-name">
-                            <span>{props.userData.firstName}</span>
-                            <span>{props.userData.lastName}</span>
-                        </div>
-                        <div className="client-card-numbers">
-                            <p>{props.userData.cardID}</p>
-                            <span>{props.userData.cardEXP}</span>
-                        </div>
-                    </div>
-                   <div className="client-card-data">
-                     <label htmlFor="card-num" > 
-                         <input  placeholder="Número de tarjeta..." type="text" name="card-num"  maxLength='13'onChange={(e) => {updateUserData(e, 'cardID')}}/>
-                     </label>
-                     <label htmlFor="card-exp" id="card-exp"> 
-                         <input placeholder="Vencimiento... (mm/aa)" type="text" name="card-exp" onChange={(e) => {updateUserData(e, 'cardEXP')}}/>
-                     </label>
-                   </div>
-                </form>
-                <button onClick={checkData}>Confirmar compra</button>
-            </div>;
+            renderStage = <CartStageTwo setStage={setStage} updateUserData ={updateUserData} userData={props.userData} checkData={checkData}/>
             break;
             case 3:
             renderStage = 

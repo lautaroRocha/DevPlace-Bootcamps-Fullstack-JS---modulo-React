@@ -38,7 +38,8 @@
     width: 80%;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     padding-right: 1rem; } }
 
 @media (min-width: 900px) {
