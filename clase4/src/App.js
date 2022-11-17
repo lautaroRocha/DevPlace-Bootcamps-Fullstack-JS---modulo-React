@@ -22,7 +22,6 @@ export function App() {
   const [products, setProducts] = useState()
   const [cart, setCart] = useState()
   const [changes, setChanges] = useState(false)
-
   const [userData, setUserData] = useState({
     firstName : "", 
     lastName : "", 
@@ -41,7 +40,7 @@ export function App() {
   useEffect(()=>{
     let order = localStorage.getItem('order');
     order ? setCart(JSON.parse(order)) : setCart([])
-  }, [])
+  }, [userData])
 
   function addToCart(prdct){
     let currentOrder = cart;

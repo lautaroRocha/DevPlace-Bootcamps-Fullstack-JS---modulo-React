@@ -44,6 +44,18 @@ function Cart(props){
         localStorage.removeItem('order');
     }
 
+    function checkData(){
+        let valores = Object.values(props.userData)
+        console.log(valores)
+        if(valores.includes("") || valores.includes("mm/aa") || valores.includes(['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'])){
+            alert('debes llenar todos los campos');
+            return;
+        }else{
+            sendOrder();
+        }
+    }
+
+
     let renderStage;
 
     ///cada caso será refactorizado a un componente separado
@@ -84,7 +96,8 @@ function Cart(props){
                         </label>
                     </div>
                     <label htmlFor="pickup-method">
-                        <select name="píckuy-method" onChange={(e)=>{updateUserData(e, 'delivery')}}>
+                        <select name="pickup-method" onChange={(e)=>{updateUserData(e, 'delivery')}}>
+                            <option >...</option>
                             <option value="home delivery" >Entrega a domicilio</option>
                             <option value="post office" >Retiro en correo</option>
                         </select>
@@ -108,14 +121,14 @@ function Cart(props){
                      </label>
                    </div>
                 </form>
-                <button onClick={sendOrder}>Confirmar compra</button>
+                <button onClick={checkData}>Confirmar compra</button>
             </div>;
             break;
             case 3:
             renderStage = 
-            <div className="client-data">
+            <div className="client-end">
                     <h1>GRACIAS POR SU COMPRA</h1>
-                    <Link to="/" onClick={()=>{setStage(1)}}>
+                    <Link className="cart-return-btn" to="/" onClick={()=>{setStage(1)}}>
                         VOLVER</Link>
             </div>
     }
