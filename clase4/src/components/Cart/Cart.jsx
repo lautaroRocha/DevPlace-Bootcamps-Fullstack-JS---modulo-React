@@ -27,9 +27,9 @@ function Cart(props){
 
     function sendOrder(){
         let data = props.userData;
-        let order = JSON.stringify(props.cart);
-        data.order = order;
+        data.order = props.cart;
         props.setUserData(data)
+        console.log(props.userData)
         cleanCart();
         setTimeout(setStage(3), 2500)
         props.setUserData({firstName : defaultValues[0], 
@@ -46,7 +46,6 @@ function Cart(props){
 
     function checkData(){
         let valuesOfUserData = Object.values(props.userData)
-        console.log(...defaultValues)
         if(valuesOfUserData.includes(...defaultValues)){
             alert('debes llenar todos los campos');
             return;
