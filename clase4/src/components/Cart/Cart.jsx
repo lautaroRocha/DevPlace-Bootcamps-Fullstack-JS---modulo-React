@@ -27,28 +27,30 @@ function Cart(props){
         props.changes ? props.setChanges(false) : props.setChanges(true)
     }
 
+
     function sendOrder(){
         let data = props.userData;
         data.order = props.cart;
         props.setUserData(data)
+        console.log(data)
         fetch('http://localhost:5000/cart', { 
             method: 'POST',
             headers: {
               'Accept': 'application/json, text/plain, */*',
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify(props.userData)
+            body: JSON.stringify(data)
           })
             .then(res => console.log(res))
             .catch(err => console.log(err));
-        //cleanCart();
-        //setTimeout(setStage(3), 2500)
-        //props.setUserData({firstName : defaultValues[0], 
-            // lastName : defaultValues[0], 
-            // delivery : defaultValues[0],
-            // cardID : defaultValues[2], 
-            // cardEXP : defaultValues[1],
-        //    order : {}})
+        cleanCart();
+        setTimeout(setStage(3), 2500)
+        props.setUserData({firstName : defaultValues[0], 
+            lastName : defaultValues[0], 
+            delivery : defaultValues[0],
+            cardID : defaultValues[2], 
+            cardEXP : defaultValues[1],
+           order : {}})
     }
 
     function cleanCart(){
