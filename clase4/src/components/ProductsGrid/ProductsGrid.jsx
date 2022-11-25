@@ -13,8 +13,9 @@ function ProductsGrid(){
 
     function filterProducts(e){
         let cat = e.target.textContent;
-        let arrayFiltrado = products.filter( (obj) => {return(obj.type === cat)});
-        setSelectedProducts(arrayFiltrado)
+        fetch(`http://localhost:5000/products/tag/${cat}`)
+            .then(res => res.json())
+            .then(data => setSelectedProducts(data))
     }
 
     function filterProductsByText(e){

@@ -79,10 +79,10 @@ function Head(props){
             </div>
             <nav ref={nav}>
                 <ul>
-                    <Link to="/productos" >Productos</Link>
+                    <Link to="/products" >Productos</Link>
                     <Link to="/" >Marca</Link>
                     <Link to="/">FAQ</Link>
-                    <Link to="/carrito">carrito</Link>
+                    <Link to="/cart">carrito</Link>
                     <Link onClick={props.switchTheme}>{sunIcon}</Link>
                 </ul>
             </nav>

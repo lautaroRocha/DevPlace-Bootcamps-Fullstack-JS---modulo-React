@@ -10,6 +10,8 @@ function Cart(props){
  
     const [stage, setStage] = useState(1)
 
+    const url = window.location.href;
+
     const defaultValues = ["", "mm/aa", ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'] ]
 
     useEffect(() =>{
@@ -29,15 +31,20 @@ function Cart(props){
         let data = props.userData;
         data.order = props.cart;
         props.setUserData(data)
-        console.log(props.userData)
-        cleanCart();
-        setTimeout(setStage(3), 2500)
-        props.setUserData({firstName : defaultValues[0], 
-            lastName : defaultValues[0], 
-            delivery : defaultValues[0],
-            cardID : defaultValues[2], 
-            cardEXP : defaultValues[1],
-            order : {}})
+        fetch('http://localhost:5000/cart', {
+            method: 'POST',
+            body: JSON.stringify(props.userData)
+          })
+          .then(res => console.log(res))
+          .catch(error => console.error('Error:', error))
+        //cleanCart();
+        //setTimeout(setStage(3), 2500)
+        //props.setUserData({firstName : defaultValues[0], 
+            // lastName : defaultValues[0], 
+            // delivery : defaultValues[0],
+            // cardID : defaultValues[2], 
+            // cardEXP : defaultValues[1],
+        //    order : {}})
     }
 
     function cleanCart(){

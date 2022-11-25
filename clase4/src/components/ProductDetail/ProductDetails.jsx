@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useState, useEffect} from "react";
 import { Link, useParams } from "react-router-dom";
 import { ProductsContext } from "../../App";
 import { ToastContainer} from 'react-toastify';
@@ -6,27 +6,32 @@ import 'react-toastify/dist/ReactToastify.css';
 import './productdetail.css'
 
 function ProductDetail(props){
-
-    let products = useContext(ProductsContext);
    
-    let params = useParams();
-    
-    let obj = products.find( ele => ele.id == params.id )
+    const [product, setProduct] = useState(null)
+    const url = window.location.href;
+
+    useEffect(()=>{
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setProduct(data))
+    }, [])
+ 
 
     return(
         <div className="wrapper">
+            {product &&
             <div className="detail">
                 <div className="detail-col">
                     <div className="detail-blob glass">
-                        <h2>{obj.title}</h2>
-                        <img src={obj.img} alt="" />
+                        <h2>{product.title}</h2>
+                        <img src={product.img} alt="" />
                     </div>
                 </div>
                 <div className="detail-col">
-                    <span>{obj.price}</span>
+                    <span>{product.price}</span>
                     <div className="detail-actions">
-                        <button className="glass" onClick={() => {props.addToCart(obj)}}>AÑADIR A COMPRA</button>
-                        <Link className="glass" to="/productos">
+                        <button className="glass" onClick={() => {props.addToCart(product)}}>AÑADIR A COMPRA</button>
+                        <Link className="glass" to="/products">
                             VOLVER
                         </Link>
                         <ToastContainer position="top-right"
@@ -41,7 +46,7 @@ function ProductDetail(props){
                             theme="dark"/>
                     </div>
                 </div>
-            </div>
+            </div>}
         <div className="back-img"></div>
         </div>
     )

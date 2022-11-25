@@ -38,11 +38,6 @@ export function App() {
   }, []);
 
 
-
-
-
-
-
   useEffect(()=>{
     let order = localStorage.getItem('order');
     order ? setCart(JSON.parse(order)) : setCart([])
@@ -110,11 +105,11 @@ export function App() {
     <ProductsContext.Provider value={products}>
       <Routes>
         <Route path="/" element={<Intro />}/>
-        <Route path="/productos" element={<ProductsGrid />}/>
-        <Route path="/carrito" element={<Cart changes={changes} setChanges={setChanges} cart={cart} setCart={setCart} removeFromCart={removeFromCart} multiplyProductInCart={multiplyProductInCart} userData={userData} setUserData={setUserData}/>}/>
+        <Route path="/products" element={<ProductsGrid />}/>
+        <Route path="/cart" element={<Cart changes={changes} setChanges={setChanges} cart={cart} setCart={setCart} removeFromCart={removeFromCart} multiplyProductInCart={multiplyProductInCart} userData={userData} setUserData={setUserData}/>}/>
         {/* <Route path="/marca" element={<Brand />}/> */}
         {/* <Route path="/faq" element={<Faq />}/> */}
-        <Route path="/productos/producto/:id" element={<ProductDetail addToCart={addToCart}/>}/>
+        <Route path="/products/id/:_id" element={<ProductDetail addToCart={addToCart}/>}/>
       </Routes>
     </ProductsContext.Provider>
     <Footer />
