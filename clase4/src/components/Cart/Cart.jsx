@@ -31,12 +31,16 @@ function Cart(props){
         let data = props.userData;
         data.order = props.cart;
         props.setUserData(data)
-        fetch('http://localhost:5000/cart', {
+        fetch('http://localhost:5000/cart', { 
             method: 'POST',
+            headers: {
+              'Accept': 'application/json, text/plain, */*',
+              'Content-Type': 'application/json'
+            },
             body: JSON.stringify(props.userData)
           })
-          .then(res => console.log(res))
-          .catch(error => console.error('Error:', error))
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
         //cleanCart();
         //setTimeout(setStage(3), 2500)
         //props.setUserData({firstName : defaultValues[0], 

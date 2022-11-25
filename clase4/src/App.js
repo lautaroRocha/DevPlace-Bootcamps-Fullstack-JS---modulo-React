@@ -10,6 +10,7 @@ import Cart from './components/Cart/Cart';
 import React, {useState, createContext, useEffect} from 'react';
 import { toast } from 'react-toastify';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AdminPanel from './components/AdminPanel/AdminPanel';
 
 
 
@@ -109,6 +110,8 @@ export function App() {
         <Route path="/cart" element={<Cart changes={changes} setChanges={setChanges} cart={cart} setCart={setCart} removeFromCart={removeFromCart} multiplyProductInCart={multiplyProductInCart} userData={userData} setUserData={setUserData}/>}/>
         {/* <Route path="/marca" element={<Brand />}/> */}
         {/* <Route path="/faq" element={<Faq />}/> */}
+        <Route path="/admin" element={<AdminPanel />}/>
+
         <Route path="/products/id/:_id" element={<ProductDetail addToCart={addToCart}/>}/>
       </Routes>
     </ProductsContext.Provider>
