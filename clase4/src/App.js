@@ -32,10 +32,16 @@ export function App() {
   })
 
   useEffect(() => {
-    fetch('todos.json')
+    fetch('http://localhost:5000/products')
     .then(res => res.json())
-    .then(data => setProducts(data));
+    .then(data => setProducts(data))
   }, []);
+
+
+
+
+
+
 
   useEffect(()=>{
     let order = localStorage.getItem('order');
