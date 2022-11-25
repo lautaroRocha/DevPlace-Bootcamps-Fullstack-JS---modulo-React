@@ -1,10 +1,11 @@
 import React, {useEffect, useState, useRef} from 'react';
 import AdminProductsView from '../../utilities/AdminProductsView/AdminProductsView';
+import AdminOrdersView from '../../utilities/AdminOrdersView/AdminOrdersView';
 import './adminpanel.css'
 
 const AdminPanel = () => {
 
-    const [view, setView] = useState()
+    const [view, setView] = useState(null)
     const [products, setProducts] = useState(null)
     const [orders, setOrders] = useState(null)
 
@@ -24,6 +25,8 @@ const AdminPanel = () => {
         .then(res => res.json())
         .then(data => setOrders(data))
     },[])
+
+
 
     function addNewProduct(e) {
         e.preventDefault();
@@ -75,18 +78,31 @@ const AdminPanel = () => {
             .catch(err => console.log(err));
     }
 
+    let selectedView;
+
+    switch(view){
+      case "...":
+        selectedView = <></>
+        break;
+      case "Productos":
+        selectedView = <AdminProductsView addNewProduct={addNewProduct} removeFromDB={removeFromDB} title={title} imgLink={imgLink} price={price} type={type} products={products} editValue={editValue}/>
+        break;
+      case "Ordenes":
+        selectedView = <AdminOrdersView orders={orders}/>
+        break;
+  }
+    
+
     return (
         <div className='wrapper'>
             <h2>Panel de Administrador</h2>
             <p>seleccioná qué ver y editar</p>
             <select name="" id="" onChange={(e)=>{setView(e.target.value)}}>
-                <option value="" defaultChecked>...</option>
+                <option value="..." defaultChecked>...</option>
                 <option value="Productos">Productos</option>
                 <option value="Ordenes">Ordenes</option>
             </select>
-            {view === "Productos" &&
-                <AdminProductsView addNewProduct={addNewProduct} removeFromDB={removeFromDB} title={title} imgLink={imgLink} price={price} type={type} products={products} editValue={editValue}/>
-            }
+            {selectedView}
         </div>
     );
 }

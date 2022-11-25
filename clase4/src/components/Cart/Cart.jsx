@@ -27,13 +27,12 @@ function Cart(props){
         props.changes ? props.setChanges(false) : props.setChanges(true)
     }
 
-
     function sendOrder(){
         let data = props.userData;
         data.order = props.cart;
         props.setUserData(data)
         console.log(data)
-        fetch('http://localhost:5000/cart', { 
+        fetch(url, { 
             method: 'POST',
             headers: {
               'Accept': 'application/json, text/plain, */*',
